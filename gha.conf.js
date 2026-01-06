@@ -24,7 +24,7 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-'+process.env.APP_VERSION+'.ipa',
+        'appium:app': 'storage:filename=' + process.env.APP_VERSION,
         'appium:deviceName': 'iPhone.*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
