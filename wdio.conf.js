@@ -29,7 +29,7 @@ export const config = {
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: 'latest',
-            build: 'Features - RDC Full Regression Suite',
+            build: process.env.SAUCE_USERNAME + ' Features - RDC Full Regression Suite',
         },
     }],
 
