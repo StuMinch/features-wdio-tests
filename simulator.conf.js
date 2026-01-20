@@ -24,13 +24,14 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=' + process.env.APP_VERSION,
-        'appium:deviceName': 'iPhone.*',
+        'appium:platformVersion': '18.0',
+        'appium:app': 'storage:e7367f9c-68ba-45fd-87e2-e0a9bbcfa276',
+        'appium:deviceName': 'iPhone 16 Pro Max Simulator',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Features - RDC Full Regression Suite',
-            tags: [process.env.APP_VERSION],
+            appiumVersion: '2.11.3',
+            build: 'Features - Simulator Full Regression Suite',
+            armRequired: true,
         },
     }],
 
