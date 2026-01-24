@@ -1,3 +1,5 @@
+const timestamp = new Date().toISOString();
+
 export const config = {
     //
     // ====================
@@ -7,8 +9,8 @@ export const config = {
     runner: 'local',
     port: 443,
 
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
+    user: 'oauth-stuart.minchington-eecfa',
+    key: 'bc29cd82-a11b-4504-8032-ee6e6164e3dd',
 
     region: 'us',
 
@@ -24,12 +26,13 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.ipa',
+        'appium:app': 'storage:filename=Features-18.ipa',
         'appium:deviceName': 'iPhone.*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: 'latest',
-            build: process.env.SAUCE_USERNAME + ' Features - RDC Full Regression Suite',
+            tunnelName: 'docker-proxy-sauce-tunnel',
+            build: 'SC-5545 - Repro Tunnel Issues ' + timestamp,
         },
     }],
 
