@@ -24,13 +24,13 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:platformVersion': '18.0',
+        'appium:platformVersion': '26.1',
         'appium:app': 'storage:e7367f9c-68ba-45fd-87e2-e0a9bbcfa276',
-        'appium:deviceName': 'iPhone 16 Pro Max Simulator',
+        'appium:deviceName': 'iPad Simulator',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
-            appiumVersion: '2.11.3',
-            build: 'Features - Simulator Full Regression Suite',
+            appiumVersion: '2.19.0',
+            build: 'Features - iPad Simulator Full Regression Suite',
             armRequired: true,
         },
     }],

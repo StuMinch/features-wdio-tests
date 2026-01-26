@@ -1,3 +1,5 @@
+const timestamp = new Date().toISOString();
+
 export const config = {
     //
     // ====================
@@ -20,16 +22,57 @@ export const config = {
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 10,
+    maxInstances: 20,
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.ipa',
-        'appium:deviceName': 'iPhone.*',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone 12*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: 'latest',
-            build: process.env.SAUCE_USERNAME + ' Features - RDC Full Regression Suite',
+            tunnelName: 'docker-proxy-sauce-tunnel',
+            build: 'Features - RDC Full Regression Suite ' + timestamp,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone 13*',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: 'latest',
+            build: 'Features - RDC Full Regression Suite ' + timestamp,
+        },
+    },
+   {
+        platformName: 'iOS',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone 14*',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: 'latest',
+            build: 'Features - RDC Full Regression Suite ' + timestamp,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone 15*',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: 'latest',
+            build: 'Features - RDC Full Regression Suite ' + timestamp,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone 16*',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: 'latest',
+            build: 'Features - RDC Full Regression Suite ' + timestamp,
         },
     }],
 
