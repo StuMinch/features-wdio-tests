@@ -26,10 +26,13 @@ export const config = {
       platformName: 'iOS',
       'appium:automationName': 'XCUITest',
 
-      // Device name does not need to match exactly — Appium will attach to the booted simulator
-      'appium:deviceName': 'iPhone',
+      // Force Appium to attach to the simulator you booted in CI
+      'appium:udid': process.env.DEVICE_UDID,
 
-      // The workflow passes APP_PATH into the environment
+      // Optional: helps Appium validate the device, and improves logs
+      'appium:deviceName': process.env.DEVICE_NAME || 'iPhone',
+
+      // Path to the built .app bundle
       'appium:app': process.env.APP_PATH,
 
       // Stability settings for CI
@@ -75,8 +78,10 @@ export const config = {
   // ============
   // Hooks
   // ============
-  before: function () {
+  before() {
     console.log('Running tests on local iOS simulator via Appium');
     console.log('APP_PATH:', process.env.APP_PATH);
+    console.log('DEVICE_UDID:', process.env.DEVICE_UDID);
+    console.log('DEVICE_NAME:', process.env.DEVICE_NAME);
   },
 };
