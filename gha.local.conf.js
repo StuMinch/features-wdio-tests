@@ -31,7 +31,7 @@ export const config = {
 
       // Optional: helps Appium validate the device, and improves logs
       'appium:deviceName': 'iPhone 17',
-      'appium:platformVersion': '18.5',
+      'appium:platformVersion': '26.0',
 
       // Path to the built .app bundle
       'appium:app': process.env.APP_PATH,
