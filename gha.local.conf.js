@@ -25,16 +25,8 @@ export const config = {
     {
       platformName: 'iOS',
       'appium:automationName': 'XCUITest',
-
-      // Force Appium to attach to the simulator you booted in CI
-      'appium:udid': process.env.DEVICE_UDID,
-
-      // Optional: helps Appium validate the device, and improves logs
-      'appium:deviceName': process.env.DEVICE_NAME || 'iPhone',
-
-      // Path to the built .app bundle
+      'appium:deviceName': 'iPhone 17',
       'appium:app': process.env.APP_PATH,
-
       // Stability settings for CI
       'appium:newCommandTimeout': 240,
       'appium:connectHardwareKeyboard': false,
