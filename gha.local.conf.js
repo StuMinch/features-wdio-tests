@@ -1,4 +1,4 @@
-const { join } = require('path');
+import { join } from 'path';
 
 export const config = {
   //
