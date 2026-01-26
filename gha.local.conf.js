@@ -1,6 +1,6 @@
 const { join } = require('path');
 
-exports.config = {
+export const config = {
   //
   // ====================
   // Runner Configuration
