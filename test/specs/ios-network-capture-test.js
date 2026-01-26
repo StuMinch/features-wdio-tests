@@ -15,5 +15,4 @@ describe('Test Network Capture', () => {
     it('should wait for requests to send', async () => {
       await driver.pause(5000);
     });
-
   });
