@@ -1,4 +1,6 @@
 import { join } from 'path';
+const path = require('path');
+const workspace = process.env.GITHUB_WORKSPACE || process.cwd();
 
 export const config = {
   // Increase the global WDIO timeout for the initial session request
@@ -32,6 +34,7 @@ export const config = {
       'appium:app': process.env.APP_PATH,
       
       'appium:usePrebuiltWDA': true,
+      'appium:derivedDataPath': path.join(workspace, 'wda_derived_data'),
       'appium:wdaLaunchTimeout': 300000,
       'appium:wdaLocalPort': 8100,
       'appium:newCommandTimeout': 480,
