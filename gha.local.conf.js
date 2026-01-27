@@ -56,7 +56,7 @@ export const config = {
   logLevel: 'info',
 
   waitforTimeout: 20000,
-  connectionRetryTimeout: 180000,
+  connectionRetryTimeout: 240000,
   connectionRetryCount: 3,
 
   //
