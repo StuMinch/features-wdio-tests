@@ -24,7 +24,7 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:platformVersion': '26.1',
+        'appium:platformVersion': '18.6',
         'appium:app': 'storage:filename=' + process.env.APP_VERSION,
         'appium:deviceName': 'iPhone Simulator',
         'appium:automationName': 'XCUITest',
