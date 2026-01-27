@@ -29,8 +29,8 @@ export const config = {
       'appium:udid': process.env.DEVICE_UDID,
 
       // Optional: helps Appium validate the device, and improves logs
-      'appium:deviceName': 'iPhone 16 Pro',
-      'appium:platformVersion': '18.5',
+      'appium:deviceName': 'iPhone 16',
+      //'appium:platformVersion': '18.5',
       'appium:wdaLaunchTimeout': 300000,
 
       // Path to the built .app bundle
