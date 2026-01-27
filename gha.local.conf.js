@@ -54,7 +54,7 @@ export const config = {
   // ============
   // Test Options
   // ============
-  logLevel: 'info',
+  logLevel: 'debug',
 
   waitforTimeout: 20000,
   connectionRetryTimeout: 240000,
