@@ -27,7 +27,7 @@ export const config = {
         'appium:deviceName': 'iPhone 16 Simulator',
         'appium:platformVersion': '18.0',
         'appium:automationName': 'XCUITest',
-        'appium:app': 'storage:filename=' + process.env.APP_VERSION,
+        'appium:app': 'storage:filename=Features.zip',
         'sauce:options': {
             appiumVersion: '2.11.3',
             build: 'Features ' + process.env.APP_VERSION + ' - Simulator Full Regression Suite',
