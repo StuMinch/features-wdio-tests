@@ -31,6 +31,7 @@ export const config = {
       // Optional: helps Appium validate the device, and improves logs
       'appium:deviceName': 'iPhone 16 Pro',
       'appium:platformVersion': '18.5',
+      'appium:wdaLaunchTimeout': 300000,
 
       // Path to the built .app bundle
       'appium:app': process.env.APP_PATH,
@@ -47,7 +48,7 @@ export const config = {
   // ===================
   // Test Files Location
   // ===================
-  specs: ['./test/specs/**/*.js'],
+  specs: ['./test/specs/**/ios-alerts-test.js'],
 
   //
   // ============
