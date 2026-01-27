@@ -39,7 +39,8 @@ export const config = {
             
             // Link to the pre-built WDA
             'appium:usePrebuiltWDA': true,
-            'appium:derivedDataPath': wdaPath,
+            //'appium:derivedDataPath': wdaPath,
+            'appium:derivedDataPath': '/Users/runner/work/Features/Features/wda_derived_data',
             
             'appium:wdaLaunchTimeout': 300000, // 5 mins
             'appium:wdaLocalPort': 8100,
