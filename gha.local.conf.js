@@ -11,7 +11,7 @@ export const config = {
   // ==================
   // Appium Connection
   // ==================
-  hostname: '127.0.0.1',
+  hostname: 'localhost',
   port: 4723,
 
   //
