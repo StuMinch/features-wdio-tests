@@ -1,6 +1,9 @@
 import { join } from 'path';
 
 export const config = {
+  // Increase the global WDIO timeout for the initial session request
+    connectionRetryTimeout: 480000, // 8 minutes
+    connectionRetryCount: 0,
   //
   // ====================
   // Runner Configuration
@@ -30,6 +33,7 @@ export const config = {
       
       'appium:usePrebuiltWDA': true,
       'appium:wdaLaunchTimeout': 300000,
+      'appium:wdaLocalPort': 8100,
       'appium:newCommandTimeout': 480,
       'appium:connectHardwareKeyboard': false,
       'appium:noReset': false,
