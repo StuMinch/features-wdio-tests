@@ -29,7 +29,7 @@ export const config = {
         'appium:automationName': 'XCUITest',
         'appium:app': 'storage:filename=' + process.env.APP_VERSION,
         'sauce:options': {
-            appiumVersion: 'latest',
+            appiumVersion: '2.11.3',
             build: 'Features ' + process.env.APP_VERSION + ' - Simulator Full Regression Suite',
             armRequired: true,
         },
