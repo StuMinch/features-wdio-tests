@@ -24,13 +24,13 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:platformVersion': '18.6',
+        'appium:platformVersion': '26.1',
         'appium:app': 'storage:filename=' + process.env.APP_VERSION,
-        'appium:deviceName': 'iPhone Simulator',
+        'appium:deviceName': 'iPhone 17 Pro Simulator',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: 'latest',
-            build: 'Features - Simulator Full Regression Suite',
+            build: 'Features ' + process.env.APP_VERSION + ' - Simulator Full Regression Suite',
             armRequired: true,
         },
     }],
