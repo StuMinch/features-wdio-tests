@@ -1,10 +1,16 @@
 import { join } from 'path';
-const path = require('path');
-const workspace = process.env.GITHUB_WORKSPACE || process.cwd();
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Helper to mimic __dirname in ESM
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// If GITHUB_WORKSPACE isn't set, we fall back to the project root
+const workspace = process.env.GITHUB_WORKSPACE || path.join(__dirname, '..');
 
 export const config = {
   // Increase the global WDIO timeout for the initial session request
-    connectionRetryTimeout: 480000, // 8 minutes
+    connectionRetryTimeout: 600000,
     connectionRetryCount: 0,
   //
   // ====================
