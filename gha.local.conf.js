@@ -13,7 +13,6 @@ export const config = {
   // ==================
   hostname: '127.0.0.1',
   port: 4723,
-  path: '/wd/hub',
 
   //
   // ============
@@ -27,14 +26,15 @@ export const config = {
       'appium:automationName': 'XCUITest',
 
       // Force Appium to attach to the simulator you booted in CI
-      'appium:udid': process.env.DEVICE_UDID,
+      'appium:udid': 'C681C3DC-9FA2-4B02-A1A3-B8705A35E86D',
 
       // Optional: helps Appium validate the device, and improves logs
-      'appium:deviceName': 'iPhone 16 Pro',
-      'appium:platformVersion': '18.5',
+      'appium:deviceName': 'iPhone 17',
+      'appium:platformVersion': '26.0',
 
       // Path to the built .app bundle
-      'appium:app': process.env.APP_PATH,
+      //'appium:app': process.env.APP_PATH,
+      'appium:app': '/Users/stuart.minchington@saucelabs.com/Developer/Features.app',
 
       // Stability settings for CI
       'appium:newCommandTimeout': 240,
