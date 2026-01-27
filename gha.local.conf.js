@@ -26,15 +26,14 @@ export const config = {
       'appium:automationName': 'XCUITest',
 
       // Force Appium to attach to the simulator you booted in CI
-      'appium:udid': 'C681C3DC-9FA2-4B02-A1A3-B8705A35E86D',
+      'appium:udid': process.env.DEVICE_UDID,
 
       // Optional: helps Appium validate the device, and improves logs
-      'appium:deviceName': 'iPhone 17',
-      'appium:platformVersion': '26.0',
+      'appium:deviceName': 'iPhone 16 Pro',
+      'appium:platformVersion': '18.5',
 
       // Path to the built .app bundle
-      //'appium:app': process.env.APP_PATH,
-      'appium:app': '/Users/stuart.minchington@saucelabs.com/Developer/Features.app',
+      'appium:app': process.env.APP_PATH,
 
       // Stability settings for CI
       'appium:newCommandTimeout': 240,
