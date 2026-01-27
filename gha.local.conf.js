@@ -23,7 +23,7 @@ export const config = {
     // Runner Configuration
     // ====================
     runner: 'local',
-    specs: ['./test/specs/**/ios-alerts-test.js'],
+    specs: ['./test/specs/**/*.js'],
     maxInstances: 1,
 
     // ============
