@@ -37,7 +37,7 @@ export const config = {
       'appium:app': process.env.APP_PATH,
 
       // Stability settings for CI
-      'appium:newCommandTimeout': 240,
+      'appium:newCommandTimeout': 480,
       'appium:connectHardwareKeyboard': false,
       'appium:noReset': false,
       'appium:fullReset': false,
