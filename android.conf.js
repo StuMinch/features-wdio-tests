@@ -1,5 +1,3 @@
-const timestamp = new Date().toISOString();
-
 export const config = {
     //
     // ====================
@@ -15,23 +13,25 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/ios-alerts-test.js'
+        './test/specs/**/ios-network-capture-test.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 1,
+    maxInstances: 10,
 
     capabilities: [{
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone_SE_2020_POC132||iPhone_SE_2020_POC124',
-        'appium:automationName': 'XCUITest',
+        platformName: 'Android',
+        'appium:deviceName': 'Google Pixel 6 Pro GoogleAPI Emulator',
+        'appium:platformVersion': '16.0',
+        'appium:app': 'storage:filename=Features.apk',
+        'appium:automationName': 'UIAutomator2',
         'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Multi-Device - Food Truck app and Features app - Run 3',
+            appiumVersion: '2.11.0',
+            build: 'Features - Google Pixel 6 Pro GoogleAPI Emulator Full Regression Suite'
+            //armRequired: true,
         },
     }],
 

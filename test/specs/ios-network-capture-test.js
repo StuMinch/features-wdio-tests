@@ -7,7 +7,7 @@ describe('Test Network Capture', () => {
         await MainScreen.networkCapture.click();
       });
     
-    it('should tap generate alert button', async () => {
+    it('should tap generate network traffic button', async () => {
       await NetworkCaptureScreen.requestsButton.waitForDisplayed({ timeout: 5000 });
       await NetworkCaptureScreen.requestsButton.click();
     });
@@ -15,4 +15,16 @@ describe('Test Network Capture', () => {
     it('should wait for requests to send', async () => {
       await driver.pause(5000);
     });
+
+    it('should toggle wifi off', async () => {
+      await NetworkCaptureScreen.requestsButton.waitForDisplayed({ timeout: 5000 });
+      //driver.toggleWifi();
+      driver.setConnection(Connection.NONE)
+      await NetworkCaptureScreen.requestsButton.click();
+    });
+
+    it('should wait for requests to send', async () => {
+      await driver.pause(5000);
+    });
+
   });

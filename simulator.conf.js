@@ -13,7 +13,7 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/ios-location-test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -24,13 +24,14 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
+        'appium:deviceName': 'iPhone Simulator',
         'appium:platformVersion': '26.1',
-        'appium:app': 'storage:e7367f9c-68ba-45fd-87e2-e0a9bbcfa276',
-        'appium:deviceName': 'iPad Simulator',
+        'appium:app': 'storage:8136562f-d220-4364-a990-02f5e8d56df4',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: '2.19.0',
-            build: 'Features - iPad Simulator Full Regression Suite',
+            wdaLaunchTimeout: 60000,
+            build: 'Features - iPhone Simulator Full Regression Suite',
             armRequired: true,
         },
     }],

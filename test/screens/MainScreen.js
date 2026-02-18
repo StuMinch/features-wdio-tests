@@ -9,7 +9,7 @@ class MainScreen {
     }
 
     get networkCapture() {
-      return $('//*[@name="Network Capture"]');
+      return $('//*[@text="Network Capture"]');
     }
 
     get applePay() {

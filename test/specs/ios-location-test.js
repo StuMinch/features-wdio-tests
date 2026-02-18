@@ -12,19 +12,21 @@ describe('Test Updating Geolocation', () => {
         await LocationScreen.locationPermissionButton.waitForDisplayed({ timeout: 5000 });
         await LocationScreen.locationPermissionButton.click();
       } catch (err) {
-        // Permission button not displayed, possibly already granted
-      }
-    });
+        console.log('Location permission prompt not displayed');
+        }
+      });
 
-    it('should update the location', async () => {
+    it('should update the location to the New York Stock Exchange', async () => {
       await driver.setGeoLocation({
-        latitude: 40.7128,
-        longitude: -74.0060
-        });
-    });
+        latitude: 40.70703,
+        longitude: -74.01121})
+      });
 
     it('should wait for location to update', async () => {
       await driver.pause(5000);
-    });
+      });
 
+    it('should verify location text', async () => {
+        await driver.sauceVisualCheck('Map Location: New York Stock Exchange');
+      });
   });

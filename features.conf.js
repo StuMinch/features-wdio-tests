@@ -31,7 +31,7 @@ export const config = {
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: 'latest',
-            build: 'Multi-Device - Food Truck app and Features app - Run 3',
+            build: 'Multi-Device - Food Truck app and Features app - Run 6',
         },
     }],
 

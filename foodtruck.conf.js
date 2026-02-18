@@ -15,7 +15,7 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/ios-alerts-test.js'
+        './test/ios-new-order-test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -26,12 +26,12 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:app': 'storage:filename=FoodTruck.ipa',
         'appium:deviceName': 'iPhone_SE_2020_POC132||iPhone_SE_2020_POC124',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             appiumVersion: 'latest',
-            build: 'Multi-Device - Food Truck app and Features app - Run 3',
+            build: 'Multi-Device - Food Truck app and Features app - Run 6',
         },
     }],
 

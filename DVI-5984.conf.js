@@ -1,5 +1,3 @@
-const timestamp = new Date().toISOString();
-
 export const config = {
     //
     // ====================
@@ -15,23 +13,133 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/ios-alerts-test.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 1,
+    maxInstances: 100,
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone_SE_2020_POC132||iPhone_SE_2020_POC124',
+        appiumVersion: '2.19.0',
+        'appium:deviceName': 'iPad Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Multi-Device - Food Truck app and Features app - Run 3',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad (8th generation) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad (9th generation) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad (10th generation) Simulator',
+        'appium:platformVersion': '18.6',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad (A16) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad Air (3rd generation) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad Air (4th generation) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad Air (5th generation) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad Air 11-inch (M2) Simulator',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8',
+            armRequired: true,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:deviceName': 'iPad mini (6th generation) Simulator"',
+        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:40219fd0-ac9a-4083-907c-84f8ec52cfe2',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            appiumVersion: '2.19.0',
+            build: 'DVI-5984 - Testing various iPad simulators - Run #8 - Run #2',
+            armRequired: true,
         },
     }],
 
