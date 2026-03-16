@@ -1,3 +1,5 @@
+const timestamp = new Date().toISOString();
+
 export const config = {
     //
     // ====================
@@ -13,26 +15,23 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/ios-alerts-test.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 10,
+    maxInstances: 1,
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:deviceName': 'iPad Simulator',
-        'appium:platformVersion': '26.1',
-        'appium:app': 'storage:8136562f-d220-4364-a990-02f5e8d56df4',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone_SE_2020_POC132||iPhone_SE_2020_POC124',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
-            appiumVersion: '2.19.0',
-            wdaLaunchTimeout: 60000,
-            build: 'Features - iPad Simulator Full Regression Suite',
-            armRequired: true,
+            appiumVersion: 'latest',
+            build: 'Multi-Device - Food Truck app and Features app - Run 6',
         },
     }],
 

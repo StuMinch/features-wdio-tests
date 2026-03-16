@@ -13,7 +13,7 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/ios-network-capture-test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -23,16 +23,15 @@ export const config = {
     maxInstances: 10,
 
     capabilities: [{
-        platformName: 'iOS',
-        'appium:deviceName': 'iPad Simulator',
-        'appium:platformVersion': '26.1',
-        'appium:app': 'storage:8136562f-d220-4364-a990-02f5e8d56df4',
-        'appium:automationName': 'XCUITest',
+        platformName: 'Android',
+        'appium:deviceName': 'Google Pixel 6 Pro GoogleAPI Emulator',
+        'appium:platformVersion': '16.0',
+        'appium:app': 'storage:filename=Features.apk',
+        'appium:automationName': 'UIAutomator2',
         'sauce:options': {
-            appiumVersion: '2.19.0',
-            wdaLaunchTimeout: 60000,
-            build: 'Features - iPad Simulator Full Regression Suite',
-            armRequired: true,
+            appiumVersion: '2.11.0',
+            build: 'Features - Google Pixel 6 Pro GoogleAPI Emulator Full Regression Suite'
+            //armRequired: true,
         },
     }],
 

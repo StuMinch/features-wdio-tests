@@ -22,57 +22,19 @@ export const config = {
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 20,
+    maxInstances: 10,
 
     capabilities: [{
         platformName: 'iOS',
         'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 12*',
+        'appium:deviceName': 'iPhone.*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
+            resigningEnabled: true,
+            biometricsInterception: true,
+            allowTouchIdEnroll: true,
             appiumVersion: 'latest',
-            tunnelName: 'docker-proxy-sauce-tunnel',
-            build: 'Features - RDC Full Regression Suite ' + timestamp,
-        },
-    },
-    {
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 13*',
-        'appium:automationName': 'XCUITest',
-        'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Features - RDC Full Regression Suite ' + timestamp,
-        },
-    },
-   {
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 14*',
-        'appium:automationName': 'XCUITest',
-        'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Features - RDC Full Regression Suite ' + timestamp,
-        },
-    },
-    {
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 15*',
-        'appium:automationName': 'XCUITest',
-        'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Features - RDC Full Regression Suite ' + timestamp,
-        },
-    },
-    {
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 16*',
-        'appium:automationName': 'XCUITest',
-        'sauce:options': {
-            appiumVersion: 'latest',
-            build: 'Features - RDC Full Regression Suite ' + timestamp,
+            build: '1 Public Device CCY',
         },
     }],
 
