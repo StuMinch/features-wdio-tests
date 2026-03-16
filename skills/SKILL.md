@@ -153,6 +153,57 @@ driver.execute('sauce:biometrics-authenticate=true');
 driver.execute('sauce:biometrics-authenticate=false');
 ```
 
+### Vitals
+Vitals enables memory, cpu, performance stats alongside UI interactions during the session.
+- Use capability `vitals: true` to enable vitals collection.
+
+### Image Injection
+Enables the camera image injection feature.
+- Use capability `imageInjection: true` to enable image injection.
+
+### Crash Reporting
+Enables capturing and inclusion of detailed stack traces in the test results, providing insights into any application crashes that occur during testing.
+- Use capability `crashReporting: true` to enable crash reporting.
+
+### Audio Capture
+Enables audio recording in your automated tests. This feature is supported for Windows and macOS desktop tests as well as mobile Real Devices. The audio will be part of the Test Results page video file, which you can play back and download in our built-in media player. The default value is false.
+- Use capability `audioCapture: true` to enable audio capture.
+
+### Network Capture
+Enables recording of HTTP/HTTPS network traffic for debugging purposes. Regardless of the framework in use (Native, Hybrid, Web), system-wide capture from all Android and iOS apps as well as browsers are supported. API calls are collected into a HAR file, which you can view and download from your Test Results > Network tab console. The default value is false.
+- Use capability `networkCapture: true` to enable network capture.
+
+### Network Profile
+Set a network profile with predefined network conditions at the beginning of the session.
+- Use capability `networkProfile: <profile_name>` to set the desired network profile.
+- Network profiles can be applied dynamically during a session by executing the following command:
+```javascript
+driver.execute('sauce:network-profile=<profile_name>');
+```
+
+Available network profiles:
+|Network Profile	|ID	|Download Speed (kbps)	|Upload Speed (kbps)	|Latency (ms)	|Packet Loss (%)|
+|No Throttling	|no-throttling	|-	|-	|-	|-|
+|No Network	|no-network	|0	|0	|0	|100|
+|2G Packet Loss	|2G-packet-loss	|100	|50	|500	|10|
+|2G	|2G	|200	|100	|300	|1|
+|3G Slow	|3G-slow	|500	|250	|200	|1|
+|3G Fast	|3G-fast	|7000	|2500	|100	|-|
+|4G Slow	|4G-slow	|8000	|4000	|100	|-|
+|4G Fast	|4G-fast	|25000	|15000	|30	|-|
+
+### Group Folder Redirection
+Enables the use of the app's private app container directory instead of the shared app group container directory. For testing on the Real Device Cloud, the app gets resigned, which is why the shared directory is not accessible.
+- Use capability `groupFolderRedirectEnabled: true` to enable group folder redirection.
+
+### Enable Animations - Android Only
+Use this capability to enable animations for Android real devices by setting it to true. By default, animations are disabled.
+- Use capability `enableAnimations: true` to enable animations.
+
+### System Alerts Delay - iOS Only
+Delays system alerts, such as alerts asking for permission to access the camera, to prevent app crashes at startup.
+- Use capability `systemAlertsDelayEnabled: true` to enable system alerts delay .
+
 ## Self‑Checklist for Test Generation
 Before outputting any test, the agent must verify all items below:
 
