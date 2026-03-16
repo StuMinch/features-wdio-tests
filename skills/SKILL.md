@@ -1,21 +1,14 @@
-# WebdriverIO Automation Skill
-
-## Step 1 — Execution Target
+# Sauce Labs Skill
 
 Always execute tests on Sauce Labs via WDIO SauceLabs service.
 
-## Step 2 — Framework
-
-| Signal | Runner |
-|--------|--------|
-| Default | Mocha |
-
+## Framework
+WebdriverIO with Mocha
 - Use describe / it syntax.
 - Use async/await for all commands.
 
-## Core Patterns
 
-### Page Object
+## Page Object
 All generated tests must follow this folder layout:
 features-wdio-test/
   test/
@@ -134,12 +127,16 @@ describe('Test Generating Alerts', () => {
 | Task | Command |
 |------|---------|
 | Run all | `npx wdio run wdio.conf.js` |
-| Run specific | `npx wdio run wdio.conf.js --spec ./test/login.js` |
+| Run specific | `npx wdio run wdio.conf.js --spec ./test/specs/something.spec.js` |
 | Parallel | Set `maxInstances: 10` in config |
 
 ## Sauce Labs Advanced Functionality
 - Use `sauce:options` in capabilities for advanced features (e.g., video recording, custom build names).
 - Resigning must be set to true `resigningEnabled: true` for all advanced features to work.
+
+### Audio Capture
+Enables audio recording in your automated tests. This feature is supported for Windows and macOS desktop tests as well as mobile Real Devices. The audio will be part of the Test Results page video file, which you can play back and download in our built-in media player. The default value is false.
+- Use capability `audioCapture: true` to enable audio capture.
 
 ### Biometric Authentication
 - Use capability `biometricsInterception: true` to enable biometric interception.
@@ -153,21 +150,25 @@ driver.execute('sauce:biometrics-authenticate=true');
 driver.execute('sauce:biometrics-authenticate=false');
 ```
 
-### Vitals
-Vitals enables memory, cpu, performance stats alongside UI interactions during the session.
-- Use capability `vitals: true` to enable vitals collection.
-
-### Image Injection
-Enables the camera image injection feature.
-- Use capability `imageInjection: true` to enable image injection.
+### Bypass Screenshot Restriction - Android Only
+Bypasses the restriction on taking screenshots for secure screens (i.e., secure text entry).
+- Use capability `bypassScreenshotRestriction: true` to enable crash reporting.
 
 ### Crash Reporting
 Enables capturing and inclusion of detailed stack traces in the test results, providing insights into any application crashes that occur during testing.
 - Use capability `crashReporting: true` to enable crash reporting.
 
-### Audio Capture
-Enables audio recording in your automated tests. This feature is supported for Windows and macOS desktop tests as well as mobile Real Devices. The audio will be part of the Test Results page video file, which you can play back and download in our built-in media player. The default value is false.
-- Use capability `audioCapture: true` to enable audio capture.
+### Enable Animations - Android Only
+Use this capability to enable animations for Android real devices by setting it to true. By default, animations are disabled.
+- Use capability `enableAnimations: true` to enable animations.
+
+### Group Folder Redirection
+Enables the use of the app's private app container directory instead of the shared app group container directory. For testing on the Real Device Cloud, the app gets resigned, which is why the shared directory is not accessible.
+- Use capability `groupFolderRedirectEnabled: true` to enable group folder redirection.
+
+### Image Injection
+Enables the camera image injection feature.
+- Use capability `imageInjection: true` to enable image injection.
 
 ### Network Capture
 Enables recording of HTTP/HTTPS network traffic for debugging purposes. Regardless of the framework in use (Native, Hybrid, Web), system-wide capture from all Android and iOS apps as well as browsers are supported. API calls are collected into a HAR file, which you can view and download from your Test Results > Network tab console. The default value is false.
@@ -178,7 +179,11 @@ Set a network profile with predefined network conditions at the beginning of the
 - Use capability `networkProfile: <profile_name>` to set the desired network profile.
 - Network profiles can be applied dynamically during a session by executing the following command:
 ```javascript
-driver.execute('sauce:network-profile=<profile_name>');
+driver.execute('sauce:network-profile="<profile_name>"');
+```
+- Use the following to disable the feature dynamically during a session by executing the following command:
+```javascript
+driver.execute('sauce:network-profile="no-throttling"');
 ```
 
 Available network profiles:
@@ -193,17 +198,14 @@ Available network profiles:
 | 4G Slow | 4G-slow | 8000 | 4000 | 100 | - |
 | 4G Fast | 4G-fast | 25000 | 15000 | 30 | - |
 
-### Group Folder Redirection
-Enables the use of the app's private app container directory instead of the shared app group container directory. For testing on the Real Device Cloud, the app gets resigned, which is why the shared directory is not accessible.
-- Use capability `groupFolderRedirectEnabled: true` to enable group folder redirection.
-
-### Enable Animations - Android Only
-Use this capability to enable animations for Android real devices by setting it to true. By default, animations are disabled.
-- Use capability `enableAnimations: true` to enable animations.
-
 ### System Alerts Delay - iOS Only
 Delays system alerts, such as alerts asking for permission to access the camera, to prevent app crashes at startup.
 - Use capability `systemAlertsDelayEnabled: true` to enable system alerts delay .
+
+### Vitals
+Vitals enables memory, cpu, performance stats alongside UI interactions during the session.
+- Use capability `vitals: true` to enable vitals collection.
+
 
 ## Self‑Checklist for Test Generation
 Before outputting any test, the agent must verify all items below:
