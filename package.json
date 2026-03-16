@@ -14,5 +14,8 @@
   },
   "scripts": {
     "wdio": "wdio run wdio.conf.js"
+  },
+  "dependencies": {
+    "mobile-element-explorer": "^1.0.2"
   }
 }

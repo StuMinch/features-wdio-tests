@@ -1,3 +1,5 @@
+const timestamp = new Date().toISOString();
+
 export const config = {
     //
     // ====================
@@ -13,7 +15,7 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/*.js'
+
     ],
     // Patterns to exclude.
     exclude: [
@@ -24,15 +26,16 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:deviceName': 'iPad Simulator',
-        'appium:platformVersion': '26.1',
-        'appium:app': 'storage:8136562f-d220-4364-a990-02f5e8d56df4',
+        'appium:app': 'storage:filename=Features.zip',
+        'appium:deviceName': 'iPhone 17 Pro Simulator',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
-            appiumVersion: '2.19.0',
-            wdaLaunchTimeout: 60000,
-            build: 'Features - iPad Simulator Full Regression Suite',
+            resigningEnabled: true,
+            biometricsInterception: true,
+            allowTouchIdEnroll: true,
+            appiumVersion: 'latest',
             armRequired: true,
+            build: 'Element Explorer',
         },
     }],
 

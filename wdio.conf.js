@@ -15,23 +15,26 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/ios-alerts-test.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
 
-    maxInstances: 1,
+    maxInstances: 10,
 
     capabilities: [{
         platformName: 'iOS',
         'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone_SE_2020_POC132||iPhone_SE_2020_POC124',
+        'appium:deviceName': 'iPhone.*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
+            resigningEnabled: true,
+            biometricsInterception: true,
+            allowTouchIdEnroll: true,
             appiumVersion: 'latest',
-            build: 'Multi-Device - Food Truck app and Features app - Run 3',
+            build: '1 Public Device CCY',
         },
     }],
 

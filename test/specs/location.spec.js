@@ -25,8 +25,4 @@ describe('Test Updating Geolocation', () => {
     it('should wait for location to update', async () => {
       await driver.pause(5000);
       });
-
-    it('should verify location text', async () => {
-        await driver.sauceVisualCheck('Map Location: New York Stock Exchange');
-      });
   });

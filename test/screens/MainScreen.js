@@ -1,35 +1,35 @@
 // test/screens/MainScreen.js
 class MainScreen {
     get alerts() {
-      return $('//*[@name="Alerts"]');
+      return $('~Alerts');
     }
 
     get networkThrottling() {
-      return $('//*[@name="Network Throttling"]');
+      return $('~Network Throttling');
     }
 
     get networkCapture() {
-      return $('//*[@text="Network Capture"]');
+      return $('~Network Capture');
     }
 
     get applePay() {
-      return $('//*[@name="Apple Pay"]');
+      return $('~Apple Pay');
     }
 
     get geoLocation() {
-      return $('//*[@name="Geolocation"]');
+      return $('~Geolocation');
     }
     
     get text() {
-      return $('//*[@name="Text"]');
+      return $('~Text');
     }
 
     get qrCodeScanner() {
-      return $('//*[@name="QR Code Scanner"]');
+      return $('~QR Code Scanner');
     }
 
     get biometrics() {
-      return $('//*[@name="Biometrics"]');
+      return $('~Biometrics');
     }
   
   }
