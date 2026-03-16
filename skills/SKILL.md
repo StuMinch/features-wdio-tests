@@ -182,15 +182,16 @@ driver.execute('sauce:network-profile=<profile_name>');
 ```
 
 Available network profiles:
-|Network Profile	|ID	|Download Speed (kbps)	|Upload Speed (kbps)	|Latency (ms)	|Packet Loss (%)|
-|No Throttling	|no-throttling	|-	|-	|-	|-|
-|No Network	|no-network	|0	|0	|0	|100|
-|2G Packet Loss	|2G-packet-loss	|100	|50	|500	|10|
-|2G	|2G	|200	|100	|300	|1|
-|3G Slow	|3G-slow	|500	|250	|200	|1|
-|3G Fast	|3G-fast	|7000	|2500	|100	|-|
-|4G Slow	|4G-slow	|8000	|4000	|100	|-|
-|4G Fast	|4G-fast	|25000	|15000	|30	|-|
+| Network Profile | ID | Download Speed (kbps) | Upload Speed (kbps) | Latency (ms) | Packet Loss (%) |
+| --- | --- | --- | --- | --- | --- |
+| No Throttling | no-throttling | - | - | - | - |
+| No Network | no-network | 0 | 0 | 0 | 100 |
+| 2G Packet Loss | 2G-packet-loss | 100 | 50 | 500 | 10 |
+| 2G | 2G | 200 | 100 | 300 | 1 |
+| 3G Slow | 3G-slow | 500 | 250 | 200 | 1 |
+| 3G Fast | 3G-fast | 7000 | 2500 | 100 | - |
+| 4G Slow | 4G-slow | 8000 | 4000 | 100 | - |
+| 4G Fast | 4G-fast | 25000 | 15000 | 30 | - |
 
 ### Group Folder Redirection
 Enables the use of the app's private app container directory instead of the shared app group container directory. For testing on the Real Device Cloud, the app gets resigned, which is why the shared directory is not accessible.
