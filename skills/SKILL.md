@@ -217,6 +217,7 @@ Structure
 
 [ ] Did I use correct naming conventions (SomethingScreen.js, something.spec.js)?
 
+
 Page Objects
 [ ] Did I create a class with getters for elements?
 
@@ -224,10 +225,12 @@ Page Objects
 
 [ ] Did I avoid putting test logic inside Page Objects?
 
+
 Selectors
 [ ] Did I use accessibility IDs (~id)?
 
 [ ] Did I avoid XPath unless absolutely required?
+
 
 Test Logic
 [ ] Did I import the correct Page Objects?
@@ -238,12 +241,14 @@ Test Logic
 
 [ ] Did I include explicit waits (waitForDisplayed, waitUntil)?
 
+
 Sauce Labs
 [ ] Did I assume cloud execution?
 
 [ ] Did I avoid generating local Appium configs?
 
 [ ] Did I use iOS + XCUITest capabilities when needed?
+
 
 Quality
 [ ] Is the test deterministic (no race conditions)?
