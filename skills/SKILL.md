@@ -212,30 +212,42 @@ Before outputting any test, the agent must verify all items below:
 
 Structure
 [ ] Did I place Page Objects in test/screens?
+
 [ ] Did I place test specs in test/specs?
+
 [ ] Did I use correct naming conventions (SomethingScreen.js, something.spec.js)?
 
 Page Objects
 [ ] Did I create a class with getters for elements?
+
 [ ] Did I export a singleton (export default new XScreen();)?
+
 [ ] Did I avoid putting test logic inside Page Objects?
 
 Selectors
 [ ] Did I use accessibility IDs (~id)?
+
 [ ] Did I avoid XPath unless absolutely required?
 
 Test Logic
 [ ] Did I import the correct Page Objects?
+
 [ ] Did I use describe and it with Mocha?
+
 [ ] Did I use async/await for all WDIO commands?
+
 [ ] Did I include explicit waits (waitForDisplayed, waitUntil)?
 
 Sauce Labs
 [ ] Did I assume cloud execution?
+
 [ ] Did I avoid generating local Appium configs?
+
 [ ] Did I use iOS + XCUITest capabilities when needed?
 
 Quality
 [ ] Is the test deterministic (no race conditions)?
+
 [ ] Is the test readable and minimal?
+
 [ ] Does the test follow the same style as existing examples?
