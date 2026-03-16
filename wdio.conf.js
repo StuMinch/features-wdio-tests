@@ -34,7 +34,7 @@ export const config = {
             biometricsInterception: true,
             allowTouchIdEnroll: true,
             appiumVersion: 'latest',
-            build: '1 Public Device CCY',
+            build: 'Agentic Testing',
         },
     }],
 

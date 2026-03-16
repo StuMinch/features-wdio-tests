@@ -179,11 +179,11 @@ Set a network profile with predefined network conditions at the beginning of the
 - Use capability `networkProfile: <profile_name>` to set the desired network profile.
 - Network profiles can be applied dynamically during a session by executing the following command:
 ```javascript
-driver.execute('sauce:network-profile="<profile_name>"');
+driver.execute('"sauce: network-profile"="<profile_name>"');
 ```
 - Use the following to disable the feature dynamically during a session by executing the following command:
 ```javascript
-driver.execute('sauce:network-profile="no-throttling"');
+driver.execute('"sauce: network-profile"="no-throttling"');
 ```
 
 Available network profiles:
