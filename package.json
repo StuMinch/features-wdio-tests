@@ -3,19 +3,23 @@
   "type": "module",
   "devDependencies": {
     "@saucelabs/wdio-sauce-visual-service": "^0.13.0",
-    "@wdio/appium-service": "^9.21.0",
-    "@wdio/cli": "^9.21.1",
-    "@wdio/local-runner": "^9.21.0",
-    "@wdio/mocha-framework": "^9.21.0",
-    "@wdio/sauce-service": "^9.21.0",
-    "@wdio/spec-reporter": "^9.20.0",
-    "appium-xcuitest-driver": "^10.12.0",
-    "wdio-wait-for": "^3.1.0"
+    "@wdio/appium-service": "^9.26.1",
+    "@wdio/cli": "^9.26.1",
+    "@wdio/local-runner": "^9.26.1",
+    "@wdio/mocha-framework": "^9.26.1",
+    "@wdio/sauce-service": "^9.26.1",
+    "@wdio/spec-reporter": "^9.26.1",
+    "appium-xcuitest-driver": "^10.32.1",
+    "expect-webdriverio": "^5.6.5",
+    "wdio-wait-for": "^3.1.1"
   },
   "scripts": {
     "wdio": "wdio run wdio.conf.js"
   },
   "dependencies": {
     "mobile-element-explorer": "^1.0.2"
+  },
+  "overrides": {
+    "devtools-protocol": "^0.0.1146845"
   }
 }

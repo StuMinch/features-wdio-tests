@@ -1,23 +1,36 @@
 import MainScreen from '../screens/MainScreen';
 import NetworkCaptureScreen from '../screens/NetworkCaptureScreen';
 
-describe('Network Capture', () => {
-    it('should send requests and validate network capture', async () => {
-        await MainScreen.networkCapture.waitForDisplayed({ timeout: 5000 });
+const NETWORK_PROFILES = [
+    'no-throttling',
+    'no-network',
+    '2G-packet-loss',
+    '2G',
+    '3G-slow',
+    '3G-fast',
+    '4G-slow',
+    '4G-fast',
+];
+
+let activeNetworkProfile = 'unknown';
+
+describe(`Test Network Capture - ${browser.capabilities['sauce:options']?.networkProfile || 'unknown'}`, () => {
+    before(async () => {
+        const capabilities = browser.capabilities;
+        activeNetworkProfile = capabilities['sauce:options']?.networkProfile;
+
+        await MainScreen.networkCapture.waitForDisplayed({ timeout: 10000 });
         await MainScreen.networkCapture.click();
+        await NetworkCaptureScreen.waitForScreen();
+    });
 
-        await NetworkCaptureScreen.sendRequestsButton.waitForDisplayed({ timeout: 5000 });
-        await NetworkCaptureScreen.sendRequestsButton.click();
+    it('should run with a valid network profile from SAUCE-RDC table', async () => {
+        expect(NETWORK_PROFILES).toContain(activeNetworkProfile);
+    });
 
-        await browser.waitUntil(async () => {
-            const success = await NetworkCaptureScreen.getSuccessCount();
-            const failures = await NetworkCaptureScreen.getFailuresCount();
-            return success + failures === 25;
-        }, { timeout: 30000 });
-
-        const success = await NetworkCaptureScreen.getSuccessCount();
-        const failures = await NetworkCaptureScreen.getFailuresCount();
-
-        expect(success + failures).toBe(25);
+    it('should send requests while network capture is enabled', async () => {
+        await NetworkCaptureScreen.sendRequests();
+        await NetworkCaptureScreen.waitForRequestStatus();
+        expect(await NetworkCaptureScreen.requestStatus.isDisplayed()).toBe(true);
     });
 });

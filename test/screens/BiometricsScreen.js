@@ -1,36 +1,71 @@
-// test/screens/BiometricsScreen.js
 class BiometricsScreen {
-    get backButton() {
-      return $('~BackButton');
+    get title() {
+        return $('~Biometrics');
     }
 
     get authenticateButton() {
-      return $('~Authenticate');
+        return $('~Authenticate');
     }
 
-    get accessGrantedText() {
-      return $('~Access Granted');
+    get lockedLabel() {
+        return $('~Locked');
     }
 
-    get canceledByUserText() {
-      return $('~Canceled by user.');
+    get accessGrantedMessage() {
+        return $('~Access Granted');
     }
 
     get lockButton() {
-      return $('~Lock');
+        return $('~Lock');
     }
 
-    get lockedText() {
-      return $('~Locked');
+    get canceledByUserMessage() {
+        return $('~Canceled by user.');
     }
 
-    async authenticate() {
-      await this.authenticateButton.click();
+    async waitForScreen() {
+        await this.title.waitForDisplayed({ timeout: 10000 });
+        await this.authenticateButton.waitForDisplayed({ timeout: 10000 });
     }
 
-    async lock() {
-      await this.lockButton.click();
+    async waitForLockedState() {
+        await this.lockedLabel.waitForDisplayed({ timeout: 10000 });
+        await this.authenticateButton.waitForDisplayed({ timeout: 10000 });
     }
-  }
-  
-  export default new BiometricsScreen();
+
+    async tapAuthenticate() {
+        await this.authenticateButton.waitForDisplayed({ timeout: 10000 });
+        await this.authenticateButton.click();
+    }
+
+    async authenticateSuccessfully() {
+        await this.tapAuthenticate();
+        await driver.execute('sauce:biometrics-authenticate=true');
+    }
+
+    async authenticateUnsuccessfully() {
+        await this.tapAuthenticate();
+        await driver.execute('sauce:biometrics-authenticate=false');
+    }
+
+    async waitForAccessGranted() {
+        await this.accessGrantedMessage.waitForDisplayed({ timeout: 10000 });
+        await this.lockButton.waitForDisplayed({ timeout: 10000 });
+    }
+
+    async waitForAuthenticationFailure() {
+        await this.canceledByUserMessage.waitForDisplayed({ timeout: 10000 });
+        await this.lockedLabel.waitForDisplayed({ timeout: 10000 });
+    }
+
+    async resetToLockedState() {
+        if (await this.lockButton.isExisting()) {
+            await this.lockButton.waitForDisplayed({ timeout: 10000 });
+            await this.lockButton.click();
+        }
+
+        await this.waitForLockedState();
+    }
+}
+
+export default new BiometricsScreen();

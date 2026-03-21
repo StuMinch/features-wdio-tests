@@ -27,14 +27,27 @@ export const config = {
     capabilities: [{
         platformName: 'iOS',
         'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone.*',
+        'appium:deviceName': 'iPhone 16*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             resigningEnabled: true,
             biometricsInterception: true,
             allowTouchIdEnroll: true,
             appiumVersion: 'latest',
-            build: 'Agentic Testing',
+            build: 'Agentic Testing - Discover Mobile Journey - ' + timestamp,
+        },
+    },
+    {
+        platformName: 'iOS',
+        'appium:app': 'storage:filename=Features-18.ipa',
+        'appium:deviceName': 'iPhone 17*',
+        'appium:automationName': 'XCUITest',
+        'sauce:options': {
+            resigningEnabled: true,
+            biometricsInterception: true,
+            allowTouchIdEnroll: true,
+            appiumVersion: 'latest',
+            build: 'Agentic Testing - Discover Mobile Journey - ' + timestamp,
         },
     }],
 
@@ -44,7 +57,18 @@ export const config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['appium', 'sauce'],
+    services: ['appium', 
+            'sauce',
+        [
+            '@saucelabs/wdio-sauce-visual-service',
+            // The options for the Sauce Visual service
+            {
+                buildName: 'TextView',
+                branch: 'main',
+                project: 'Features Visual Test',
+            },
+        ],
+    ],
 
     framework: 'mocha',
 

@@ -52,7 +52,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Tracking | Button | Tracking | `//XCUIElementTypeButton[@name="Tracking"]` |
 | Geolocation | StaticText | Geolocation | `//XCUIElementTypeStaticText[@name="Geolocation"]` |
 | Location Access Denied. Please enable in Settings. | StaticText | Location Access Denied. Please enable in Settings. | `//XCUIElementTypeStaticText[@name="Location Access Denied. Please enable in Settings."]` |
@@ -103,7 +102,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Tracking | Button | Tracking | `//XCUIElementTypeButton[@name="Tracking"]` |
 | Geolocation | StaticText | Geolocation | `//XCUIElementTypeStaticText[@name="Geolocation"]` |
 | Location Access Denied. Please enable in Settings. | StaticText | Location Access Denied. Please enable in Settings. | `//XCUIElementTypeStaticText[@name="Location Access Denied. Please enable in Settings."]` |
@@ -114,7 +112,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | English (US)  | Button | English (US)  | `//XCUIElementTypeButton[@name="English (US) "]` |
 | FAST.com logo | Image | FAST.com logo | `//XCUIElementTypeImage[@name="FAST.com logo"]` |
 | Powered by Netflix | Image | Powered by Netflix | `//XCUIElementTypeImage[@name="Powered by Netflix"]` |
@@ -129,7 +126,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Send 25 GET Requests | Button | Send 25 GET Requests | `//XCUIElementTypeButton[@name="Send 25 GET Requests"]` |
 | Request Status | StaticText | Request Status | `//XCUIElementTypeStaticText[@name="Request Status"]` |
 | Success: 0 / 25 | StaticText | Success: 0 / 25 | `//XCUIElementTypeStaticText[@name="Success: 0 / 25"]` |
@@ -141,7 +137,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | QR Scanner | StaticText | QR Scanner | `//XCUIElementTypeStaticText[@name="QR Scanner"]` |
 | Point camera at a QR code | StaticText | Point camera at a QR code | `//XCUIElementTypeStaticText[@name="Point camera at a QR code"]` |
 
@@ -151,7 +146,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Authenticate | Button | Authenticate | `//XCUIElementTypeButton[@name="Authenticate"]` |
 | lock.fill | Image | lock.fill | `//XCUIElementTypeImage[@name="lock.fill"]` |
 | faceid | Image | faceid | `//XCUIElementTypeImage[@name="faceid"]` |
@@ -169,7 +163,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Buy with Apple Pay | Button | Buy with Apple Pay | `//XCUIElementTypeButton[@name="Buy with Apple Pay"]` |
 
 ## Screen 10: Screen 10
@@ -178,7 +171,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Submit | Button | Submit | `//XCUIElementTypeButton[@name="Submit"]` |
 | Back | Button | Back | `//XCUIElementTypeButton[@name="Back"]` |
 
@@ -188,7 +180,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Generate Alert | Button | Generate Alert | `//XCUIElementTypeButton[@name="Generate Alert"]` |
 
 ## Screen 12: Screen 12
@@ -197,7 +188,6 @@
 
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
-| BackButton | Button | BackButton | `//XCUIElementTypeButton[@name="BackButton"]` |
 | Tracking | Button | Tracking | `//XCUIElementTypeButton[@name="Tracking"]` |
 | Geolocation | StaticText | Geolocation | `//XCUIElementTypeStaticText[@name="Geolocation"]` |
 | Location Access Denied. Please enable in Settings. | StaticText | Location Access Denied. Please enable in Settings. | `//XCUIElementTypeStaticText[@name="Location Access Denied. Please enable in Settings."]` |

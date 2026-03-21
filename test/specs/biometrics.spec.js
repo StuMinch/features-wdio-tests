@@ -1,32 +1,30 @@
 import MainScreen from '../screens/MainScreen';
 import BiometricsScreen from '../screens/BiometricsScreen';
 
-describe('Biometrics Authentication', () => {
-    it('should authenticate successfully', async () => {
-        await MainScreen.biometrics.waitForDisplayed({ timeout: 5000 });
+describe('Test Biometrics Authentication', () => {
+    before(async () => {
+        await MainScreen.biometrics.waitForDisplayed({ timeout: 10000 });
         await MainScreen.biometrics.click();
-
-        await BiometricsScreen.authenticateButton.waitForDisplayed({ timeout: 5000 });
-        await BiometricsScreen.authenticate();
-
-        // Simulate successful biometric authentication
-        await driver.execute('sauce:biometrics-authenticate=true');
-
-        await BiometricsScreen.accessGrantedText.waitForDisplayed({ timeout: 5000 });
-        expect(await BiometricsScreen.accessGrantedText.isDisplayed()).toBe(true);
+        await BiometricsScreen.waitForScreen();
     });
 
-    it('should fail authentication', async () => {
-        await BiometricsScreen.lockButton.waitForDisplayed({ timeout: 5000 });
-        await BiometricsScreen.lock();
+    beforeEach(async () => {
+        await BiometricsScreen.resetToLockedState();
+    });
 
-        await BiometricsScreen.authenticateButton.waitForDisplayed({ timeout: 5000 });
-        await BiometricsScreen.authenticate();
+    it('should authenticate successfully with biometrics', async () => {
+        await BiometricsScreen.authenticateSuccessfully();
+        await BiometricsScreen.waitForAccessGranted();
 
-        // Simulate failed biometric authentication
-        await driver.execute('sauce:biometrics-authenticate=false');
+        expect(await BiometricsScreen.accessGrantedMessage.isDisplayed()).toBe(true);
+        expect(await BiometricsScreen.lockButton.isDisplayed()).toBe(true);
+    });
 
-        await BiometricsScreen.canceledByUserText.waitForDisplayed({ timeout: 5000 });
-        expect(await BiometricsScreen.canceledByUserText.isDisplayed()).toBe(true);
+    it('should reject biometric authentication when biometrics fails', async () => {
+        await BiometricsScreen.authenticateUnsuccessfully();
+        await BiometricsScreen.waitForAuthenticationFailure();
+
+        expect(await BiometricsScreen.canceledByUserMessage.isDisplayed()).toBe(true);
+        expect(await BiometricsScreen.lockedLabel.isDisplayed()).toBe(true);
     });
 });

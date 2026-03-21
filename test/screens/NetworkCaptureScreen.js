@@ -1,34 +1,25 @@
-// test/screens/NetworkCaptureScreen.js
 class NetworkCaptureScreen {
-    get backButton() {
-      return $('~BackButton');
-    }
-
-    get sendRequestsButton() {
-      return $('~Send 25 GET Requests');
+    get send25GetRequestsButton() {
+        return $('~Send 25 GET Requests');
     }
 
     get requestStatus() {
-      return $('~Request Status');
+        return $('~Request Status');
     }
 
-    get successText() {
-      return $('//XCUIElementTypeStaticText[starts-with(@name, "Success:")]');
+    async waitForScreen() {
+        await this.send25GetRequestsButton.waitForDisplayed({ timeout: 10000 });
+        await this.requestStatus.waitForDisplayed({ timeout: 10000 });
     }
 
-    get failuresText() {
-      return $('//XCUIElementTypeStaticText[starts-with(@name, "Failures:")]');
+    async sendRequests() {
+        await this.send25GetRequestsButton.waitForDisplayed({ timeout: 10000 });
+        await this.send25GetRequestsButton.click();
     }
 
-    async getSuccessCount() {
-      const text = await this.successText.getText();
-      return parseInt(text.split('/')[0].split(':')[1].trim());
+    async waitForRequestStatus() {
+        await this.requestStatus.waitForDisplayed({ timeout: 10000 });
     }
+}
 
-    async getFailuresCount() {
-      const text = await this.failuresText.getText();
-      return parseInt(text.split('/')[0].split(':')[1].trim());
-    }
-  }
-  
-  export default new NetworkCaptureScreen();
+export default new NetworkCaptureScreen();
