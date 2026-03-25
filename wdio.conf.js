@@ -26,16 +26,15 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-NoBanner.zip',
-        'appium:deviceName': 'iPhone Simulator',
-        'appium:platformVersion': '26.1',
+        'appium:app': 'storage:filename=Features-9.ipa',
+        'appium:deviceName': 'iPhone.*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             resigningEnabled: true,
             biometricsInterception: true,
             allowTouchIdEnroll: true,
-            appiumVersion: '2.19.0',
-            build: 'iOS Simulator and Visual Testing - ' + timestamp,
+            appiumVersion: 'latest',
+            build: 'Google Antigravity and Gemini 3.1 Pro - ' + timestamp,
         },
     }],
 
@@ -45,8 +44,8 @@ export const config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['appium', 
-            'sauce',
+    services: ['appium',
+        'sauce',
         [
             '@saucelabs/wdio-sauce-visual-service',
             // The options for the Sauce Visual service
