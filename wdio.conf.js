@@ -26,28 +26,16 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 16*',
+        'appium:app': 'storage:filename=Features.zip',
+        'appium:deviceName': 'iPhone Simulator',
+        'appium:platformVersion': '26.1',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             resigningEnabled: true,
             biometricsInterception: true,
             allowTouchIdEnroll: true,
-            appiumVersion: 'latest',
-            build: 'Agentic Testing - Discover Mobile Journey - ' + timestamp,
-        },
-    },
-    {
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-18.ipa',
-        'appium:deviceName': 'iPhone 17*',
-        'appium:automationName': 'XCUITest',
-        'sauce:options': {
-            resigningEnabled: true,
-            biometricsInterception: true,
-            allowTouchIdEnroll: true,
-            appiumVersion: 'latest',
-            build: 'Agentic Testing - Discover Mobile Journey - ' + timestamp,
+            appiumVersion: '2.19.0',
+            build: 'iOS Simulator and Visual Testing - ' + timestamp,
         },
     }],
 
