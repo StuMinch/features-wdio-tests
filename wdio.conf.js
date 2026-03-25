@@ -26,7 +26,7 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.zip',
+        'appium:app': 'storage:filename=Features-NoBanner.zip',
         'appium:deviceName': 'iPhone Simulator',
         'appium:platformVersion': '26.1',
         'appium:automationName': 'XCUITest',
