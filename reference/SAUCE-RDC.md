@@ -6,6 +6,7 @@ When generating or modifying configs:
 - Always use a broad appium:deviceName pattern (e.g., iPhone.*, Google.*,)
 - Always include a build name
 - Always target cloud execution
+- Always include the Sauce Labs capability `resigningEnabled: true` as it is required for advanced capabilities. 
 
 ### Example Sauce Labs RDC Android Capabilities
 ```javascript

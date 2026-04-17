@@ -26,7 +26,7 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features-9.ipa',
+        'appium:app': 'storage:filename=Features.ipa',
         'appium:deviceName': 'iPhone.*',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
@@ -34,7 +34,7 @@ export const config = {
             biometricsInterception: true,
             allowTouchIdEnroll: true,
             appiumVersion: 'latest',
-            build: 'Google Antigravity and Gemini 3.1 Pro - ' + timestamp,
+            build: 'Sauce Agentic AI Workflow - ' + timestamp,
         },
     }],
 
