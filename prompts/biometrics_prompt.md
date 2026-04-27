@@ -1,15 +1,17 @@
-Using the rules and conventions defined in skills/SKILL.md, generate a new WebdriverIO test for my iOS app that validates the biometrics authentication flow.
-
-Requirements:
-- Follow the Page Object Model exactly as defined in the skill.
-- Place the Page Object in test/screens and the test in test/specs.
-- Use accessibility ID selectors.
-- Use explicit waits.
-- Assume the test runs on Sauce Labs and use the appropriate biometrics simulation commands.
-- Name the screen BiometricsScreen.js and the test biometrics.spec.js.
+Using the rules and conventions defined in `wdio-skill`, generate a new WebdriverIO test for my iOS app that validates the biometrics authentication flow.
 
 The test must include two scenarios:
 1. Successful biometric authentication
 2. Unsuccessful biometric authentication
 
-Output both the Page Object and the test file.
+Requirements:
+- Follow the Page Object Model exactly as defined in `wdio-skill`
+- Reference the appropriate biometrics simulation commands located in the Sauce Labs RDC skill `sauce-rdc`
+- Reference `elements.md` within the Sauce Labs RDC skill
+- Use explicit waits.
+
+Test steps:
+- Tap `Authenticate` button.
+- Initiate success biometrics authentication.
+- Must tap the `Lock` button to reset state.
+- Initiate unsuccessful biometrics scenario.

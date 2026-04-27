@@ -25,16 +25,17 @@ export const config = {
     maxInstances: 10,
 
     capabilities: [{
-        platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.ipa',
-        'appium:deviceName': 'iPhone.*',
-        'appium:automationName': 'XCUITest',
+        platformName: 'Android',
+        'appium:app': 'storage:54568b6d-fdff-4550-aca2-27cfb5d20480',
+        'appium:deviceName': 'Google Pixel 9 Pro Emulator',
+        'appium:automationName': 'UIAutomator2',
+        'appium:platformVersion': '16.0',
         'sauce:options': {
             resigningEnabled: true,
             biometricsInterception: true,
             allowTouchIdEnroll: true,
-            appiumVersion: 'latest',
-            build: 'Sauce Agentic AI Workflow - ' + timestamp,
+            appiumVersion: '2.11.0',
+            build: 'Jetnews Android - ' + timestamp,
         },
     }],
 

@@ -1,5 +1,3 @@
-const timestamp = new Date().toISOString();
-
 export const config = {
     //
     // ====================
@@ -26,15 +24,14 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.ipa',
-        'appium:deviceName': 'iPhone.*',
+        'appium:deviceName': 'iPhone 16 Simulator',
+        'appium:platformVersion': '18.0',
         'appium:automationName': 'XCUITest',
+        'appium:app': 'storage:filename=Features.zip',
         'sauce:options': {
-            resigningEnabled: true,
-            biometricsInterception: true,
-            allowTouchIdEnroll: true,
-            appiumVersion: 'latest',
-            build: 'Sauce Agentic AI Workflow - ' + timestamp,
+            appiumVersion: '2.11.3',
+            build: 'Features ' + process.env.APP_VERSION + ' - Simulator Full Regression Suite',
+            armRequired: true,
         },
     }],
 
@@ -44,9 +41,12 @@ export const config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['sauce'],
+    services: ['appium', 'sauce'],
+
     framework: 'mocha',
+
     reporters: ['spec'],
+
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000

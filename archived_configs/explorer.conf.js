@@ -15,7 +15,7 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/*.js'
+
     ],
     // Patterns to exclude.
     exclude: [
@@ -26,15 +26,16 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.ipa',
-        'appium:deviceName': 'iPhone.*',
+        'appium:app': 'storage:filename=Features.zip',
+        'appium:deviceName': 'iPhone 17 Pro Simulator',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
             resigningEnabled: true,
             biometricsInterception: true,
             allowTouchIdEnroll: true,
             appiumVersion: 'latest',
-            build: 'Sauce Agentic AI Workflow - ' + timestamp,
+            armRequired: true,
+            build: 'Element Explorer',
         },
     }],
 
@@ -44,9 +45,12 @@ export const config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['sauce'],
+    services: ['appium', 'sauce'],
+
     framework: 'mocha',
+
     reporters: ['spec'],
+
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
