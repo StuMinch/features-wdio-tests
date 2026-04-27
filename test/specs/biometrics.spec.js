@@ -1,22 +1,25 @@
 import MainScreen from '../screens/MainScreen';
 import BiometricsScreen from '../screens/BiometricsScreen';
 
-describe('Test Biometrics Authentication', () => {
-    it('should authenticate successfully and then reject an unsuccessful attempt', async () => {
+describe('Biometric Authentication', () => {
+    it('should navigate to the Biometrics screen', async () => {
         await MainScreen.biometrics.waitForDisplayed({ timeout: 5000 });
         await MainScreen.biometrics.click();
+    });
 
-        await BiometricsScreen.tapAuthenticate();
-        await driver.execute('sauce:biometrics-authenticate=true');
-        await BiometricsScreen.waitForAccessGranted();
-        expect(await BiometricsScreen.accessGrantedLabel.isDisplayed()).toBe(true);
-
-        await BiometricsScreen.tapLock();
+    it('should successfully authenticate with biometrics', async () => {
         await BiometricsScreen.authenticateButton.waitForDisplayed({ timeout: 5000 });
+        await BiometricsScreen.authenticateButton.click();
+        await driver.execute('sauce:biometrics-authenticate=true');
+        await BiometricsScreen.accessGrantedLabel.waitForDisplayed({ timeout: 5000 });
+        await BiometricsScreen.lockButton.waitForDisplayed({ timeout: 5000 });
+        await BiometricsScreen.lockButton.click();
+    });
 
-        await BiometricsScreen.tapAuthenticate();
+    it('should fail biometric authentication', async () => {
+        await BiometricsScreen.authenticateButton.waitForDisplayed({ timeout: 5000 });
+        await BiometricsScreen.authenticateButton.click();
         await driver.execute('sauce:biometrics-authenticate=false');
-        await BiometricsScreen.waitForError();
-        expect(await BiometricsScreen.errorLabel.isDisplayed()).toBe(true);
+        await BiometricsScreen.errorLabel.waitForDisplayed({ timeout: 5000 });
     });
 });
