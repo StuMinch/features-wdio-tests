@@ -147,14 +147,15 @@
 | Element Name | Type | Accessibility ID | XPath |
 |---|---|---|---|
 | Authenticate | Button | Authenticate | `//XCUIElementTypeButton[@name="Authenticate"]` |
+| Authenticate | Button | biometrics.authenticateButton | `//XCUIElementTypeButton[@name="biometrics.authenticateButton"]` |
 | lock.fill | Image | lock.fill | `//XCUIElementTypeImage[@name="lock.fill"]` |
+| lock.open.fill | Image | lock.open.fill | `//XCUIElementTypeImage[@name="lock.open.fill"]` |
 | faceid | Image | faceid | `//XCUIElementTypeImage[@name="faceid"]` |
 | Biometrics | StaticText | Biometrics | `//XCUIElementTypeStaticText[@name="Biometrics"]` |
-| Locked | StaticText | Locked | `//XCUIElementTypeStaticText[@name="Locked"]` |
 | Authenticate | StaticText | Authenticate | `//XCUIElementTypeStaticText[@name="Authenticate"]` |
 | Access Granted | Static Text | Access Granted | `//XCUIElementTypeStaticText[@name=\"Access Granted\"]` |
-| Lock | Static Text | Lock | `//XCUIElementTypeButton[@name=\"Lock\"]` |
-| Canceled by user | Static Text | Canceled by user. | `//XCUIElementTypeStaticText[@name=\"Canceled by user.\"]` |
+| Lock | Button | biometrics.lockButton | `//XCUIElementTypeButton[@name="biometrics.lockButton"]` |
+| Canceled by user | Static Text | biometrics.errorLabel | `//XCUIElementTypeStaticText[@name="biometrics.errorLabel"]` |
 
 
 ## Screen 9: Screen 9

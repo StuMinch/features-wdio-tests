@@ -44,9 +44,23 @@ export const config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ['sauce'],
+    services: ['appium',
+        'sauce',
+        [
+            '@saucelabs/wdio-sauce-visual-service',
+            // The options for the Sauce Visual service
+            {
+                buildName: 'TextView',
+                branch: 'main',
+                project: 'Features Visual Test',
+            },
+        ],
+    ],
+
     framework: 'mocha',
+
     reporters: ['spec'],
+
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
