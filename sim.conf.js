@@ -1,8 +1,5 @@
 const timestamp = new Date().toISOString();
 
-import fs from 'node:fs';
-import path from 'node:path';
-
 export const config = {
     //
     // ====================
@@ -29,15 +26,13 @@ export const config = {
 
     capabilities: [{
         platformName: 'iOS',
-        'appium:app': 'storage:filename=Features.ipa',
-        'appium:deviceName': 'iPhone.*',
+        'appium:app': 'storage:filename=Features.zip',
+        'appium:deviceName': 'iPhone Simulator',
+        'appium:platformVersion': '18.0',
         'appium:automationName': 'XCUITest',
         'sauce:options': {
-            resigningEnabled: true,
-            biometricsInterception: true,
-            allowTouchIdEnroll: true,
-            appiumVersion: 'latest',
-            build: 'Sauce Agentic AI Workflow - ' + timestamp,
+            appiumVersion: '2.11.3',
+            build: 'ARM Migration',
         },
     }],
 
@@ -149,21 +144,8 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    afterTest: async function(test, context, { passed }) {
-        if (passed) {
-            return;
-        }
-
-        const safeTitle = test.title
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/(^-|-$)/g, '');
-        const screenshotDir = path.resolve('./artifacts/sauce/failures');
-        const screenshotPath = path.join(screenshotDir, `${Date.now()}-${safeTitle || 'failed-test'}.png`);
-
-        fs.mkdirSync(screenshotDir, { recursive: true });
-        await browser.saveScreenshot(screenshotPath);
-    },
+    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // },
 
 
     /**

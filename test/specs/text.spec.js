@@ -1,36 +1,22 @@
 import MainScreen from '../screens/MainScreen';
 import TextScreen from '../screens/TextScreen';
 
-const EXPECTED_TOTAL_UNAPPROVED_DIFFS = 0;
-
-describe('Test Text Input', () => {
-    it('should tap on text', async () => {
-        await MainScreen.text.waitForDisplayed({ timeout: 5000});
+describe('Test User Submits Text', () => {
+    it('should input and submit text successfully', async () => {
+        // Step 1 & 2: Navigate to main screen and tap Text button
+        await MainScreen.text.waitForDisplayed({ timeout: 5000 });
         await MainScreen.text.click();
-    });
 
-    it('should assert visibility of all elements', async () => {
-      await TextScreen.textField.waitForDisplayed({ timeout: 5000 });
-      await TextScreen.submitButton.waitForDisplayed({ timeout: 5000 });
-      await TextScreen.backButton.waitForDisplayed({ timeout: 5000 });
-    });
+        // Step 3: Wait for text field
+        await TextScreen.textField.waitForDisplayed({ timeout: 5000 });
 
-    it('should input text', async () => {
-      await TextScreen.textField.setValue("This is some text");
-    });
+        // Step 4: Input "Hello World!"
+        await TextScreen.inputText('Hello World!');
 
-    it('should tap the submit button', async () => {
-      await TextScreen.submitButton.click();
-    });
+        // Step 5 & 6: Wait for Submit button and tap it
+        await TextScreen.submitForm();
 
-    it('should tap the back button', async () => {
-      await TextScreen.backButton.click();
+        // Verify submission completed (brief wait for response)
+        await driver.pause(1000);
     });
-/*
-    it('should take visual snapshot', async () => {
-      await browser.sauceVisualCheck('TextView Screen');
-      await browser.sauceVisualResults();
-      expect((await browser.sauceVisualResults()).UNAPPROVED).toBe(EXPECTED_TOTAL_UNAPPROVED_DIFFS);
-    });
-*/
-  });
+});

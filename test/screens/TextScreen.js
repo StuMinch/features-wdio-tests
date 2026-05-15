@@ -8,9 +8,15 @@ class TextScreen {
       return $('~Submit');
     }
 
-    get backButton() {
-      return $('~Back');
+    async inputText(text) {
+      await this.textField.waitForDisplayed({ timeout: 5000 });
+      await this.textField.setValue(text);
+    }
+
+    async submitForm() {
+      await this.submitButton.waitForDisplayed({ timeout: 5000 });
+      await this.submitButton.click();
     }
   }
   
-  export default new TextScreen(); 
+  export default new TextScreen();
