@@ -1,7 +1,7 @@
 // test/screens/AlertsScreen.js
 class AlertsScreen {
     get generateAlertButton() {
-      return $('~Generate Alert');
+      return $('~alerts.generateButton');
     }
 
     get okButton() {
