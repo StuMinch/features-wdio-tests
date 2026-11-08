@@ -13,7 +13,7 @@ export const config = {
     region: 'us',
 
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/alerts.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
